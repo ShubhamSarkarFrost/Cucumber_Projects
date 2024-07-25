@@ -3,10 +3,13 @@ package Steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,14 +21,14 @@ import java.util.concurrent.TimeUnit;
 public class EbayAdvance_Steps {
 
     String Baseurl = "https://www.ebay.com/";
-    String WebdriverPath ="C:\\Users\\Lenovo\\IdeaProjects\\Cucumber_Projects\\webdrivers\\geckodriver.exe";
     WebDriver driver;
     String ExpCategory = "Antiques";
 
+
     @Given("I am on Ebay Advance Search Page")
     public void i_am_on_ebay_advance_search_page() {
-         System.setProperty("webdriver.gecko.driver",WebdriverPath);
-         driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+         driver = new ChromeDriver();
          driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
          driver.get(Baseurl);
          driver.manage().window().maximize();

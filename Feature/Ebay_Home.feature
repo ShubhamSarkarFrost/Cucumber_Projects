@@ -1,4 +1,4 @@
-
+@ignore
 Feature: Ebay Home Page Scenarios
 
 

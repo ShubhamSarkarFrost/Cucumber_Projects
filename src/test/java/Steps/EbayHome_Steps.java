@@ -3,7 +3,9 @@ package Steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,12 +15,12 @@ public class EbayHome_Steps {
 
     String Base_Url = "https://www.ebay.com/";
     String Base_title = "Electronics, Cars, Fashion, Collectibles & More | eBay";
-    String WebdriverPath = "C:\\Users\\Lenovo\\IdeaProjects\\Cucumber_Projects\\webdrivers\\chromedriver.exe";
     WebDriver driver;
+
 
     @Given("I am on Ebay Home Page")
     public void i_am_on_ebay_home_page() {
-        System.setProperty("webdriver.chrome.driver", WebdriverPath);
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(Base_Url);
         driver.manage().window().maximize();

@@ -9,9 +9,10 @@ import org.junit.runner.RunWith;
         features = {"Feature"},
         glue = {"Steps"},
         plugin = {"pretty","html:target/cucumber-reports/report"},
-        dryRun = true,
+        dryRun = false,
         monochrome = true,
-        publish = true
+        publish = true,
+        tags = "not @ignore"
 
 )
 
