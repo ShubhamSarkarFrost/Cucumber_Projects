@@ -9,3 +9,4 @@ Feature: As a User i want to verify basic search operation works in FirstCry Web
       | Search | Result |
       |   baby toys |  Baby & Kids Toys and Games |
       |    girl toys |   Baby & Kids Toys and Games |
+
